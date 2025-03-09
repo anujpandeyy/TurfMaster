@@ -5,6 +5,7 @@ class MyCard extends StatelessWidget {
   final String title_2;
   final String title_3;
   final String title_4;
+  final Color myColor;
 
   const MyCard({
     super.key,
@@ -12,6 +13,7 @@ class MyCard extends StatelessWidget {
     required this.title_2,
     required this.title_3,
     required this.title_4,
+    required this.myColor,
   });
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class MyCard extends StatelessWidget {
           height: 150,
           width: 300,
           decoration: BoxDecoration(
-            color: Colors.amber,
+            color: myColor,
             borderRadius: BorderRadius.circular(10.0),
           ),
         ),

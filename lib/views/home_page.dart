@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:turf_app/widgets/button.dart';
+import 'package:turf_app/data/card.dart';
 import 'package:turf_app/widgets/card.dart';
+import 'package:turf_app/widgets/categories.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,43 +9,50 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Home')),
+      appBar: AppBar(title: Text('Home'), centerTitle: true),
       body: Column(
         children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 20, left: 50),
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  MyCard(
-                    title_1: 'Venue',
-                    title_2: 'Battledoor Badminton Academy',
-                    title_3: 'Get Special offer',
-                    title_4: 'Up to 40%',
+          SizedBox(
+            height: 200,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: cardData.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: MyCard(
+                    title_1: cardData[index]['title_1'],
+                    title_2: cardData[index]['title_2'],
+                    title_3: cardData[index]['title_3'],
+                    title_4: cardData[index]['title_4'],
+                    myColor: cardData[index]['myColor'],
                   ),
-                  SizedBox(width: 20),
-                  MyCard(
-                    title_1: 'Venue',
-                    title_2: 'Battledoor Badminton Academy',
-                    title_3: 'Get Special offer',
-                    title_4: 'Up to 40%',
-                  ),
-                  MyCard(
-                    title_1: 'Venue',
-                    title_2: 'Battledoor Badminton Academy',
-                    title_3: 'Get Special offer',
-                    title_4: 'Up to 40%',
-                  ),
-                  SizedBox(width: 20),
-                  MyCard(
-                    title_1: 'Venue',
-                    title_2: 'Battledoor Badminton Academy',
-                    title_3: 'Get Special offer',
-                    title_4: 'Up to 40%',
-                  ),
-                ],
-              ),
+                );
+              },
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Categories(
+                  img: 'assets/home/cricket-icon.png',
+                  text: 'Cricket',
+                ),
+                Categories(
+                  img: 'assets/home/ball-football-icon.png',
+                  text: 'Football',
+                ),
+                Categories(
+                  img: 'assets/home/shuttlecock-badminton-icon.png',
+                  text: 'Badminton',
+                ),
+                Categories(
+                  img: 'assets/home/tennis-ball-icon.png',
+                  text: 'Tennis',
+                ),
+              ],
             ),
           ),
         ],
