@@ -7,8 +7,7 @@ class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
   @override
   Widget build(BuildContext context) {
-    return (
-      Scaffold(
+    return (Scaffold(
       appBar: AppBar(
         title: Text('TurfMaster', style: TextStyle(color: Colors.grey)),
         centerTitle: true,
@@ -62,17 +61,14 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 120, top: 10),
+                  padding: const EdgeInsets.only(left: 130, top: 10),
                   child: GestureDetector(
-                    onTap:
-                        () => {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => RegisterPage(),
-                            ),
-                          ),
-                        },
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => RegisterPage()),
+                      );
+                    },
                     child: Text(
                       'Register now.',
                       style: TextStyle(
