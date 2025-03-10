@@ -16,7 +16,7 @@ class Categories extends StatelessWidget {
           width: 50,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            border: Border.all(color: Colors.yellow),
+            border: Border.all(width: 2.0, color: Colors.yellow),
           ),
           child: ClipOval(child: Image.asset(img)),
         ),
