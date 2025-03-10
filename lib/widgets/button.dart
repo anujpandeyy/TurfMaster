@@ -16,7 +16,7 @@ class Button extends StatelessWidget {
       onTap: onPressesd,
       child: (Container(
         height: 40,
-        width: 100,
+        width: 120,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(10),

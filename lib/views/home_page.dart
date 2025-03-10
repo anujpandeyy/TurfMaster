@@ -4,7 +4,7 @@ import 'package:turf_app/views/turf_page.dart';
 import 'package:turf_app/widgets/card.dart';
 import 'package:turf_app/widgets/categories.dart';
 import 'package:turf_app/data/turf_card.dart';
-import 'package:turf_app/widgets/turfCard.dart';
+import 'package:turf_app/widgets/turfcard.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

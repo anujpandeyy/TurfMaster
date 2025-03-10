@@ -22,16 +22,19 @@ class Turfcard extends StatelessWidget {
         height: 350,
         child: Stack(
           children: [
-            Container(
-              height: 200,
-              width: 180,
-              decoration: BoxDecoration(
-                border: Border.all(width: 2.0, color: Colors.yellow),
-                borderRadius: BorderRadius.circular(5.0),
+            Card(
+              elevation: 10,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 8.0, bottom: 10),
-                child: Image.asset(myImg),
+              child: SizedBox(
+                height: 200,
+                width: 180,
+
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 8.0, bottom: 10),
+                  child: Image.asset(myImg),
+                ),
               ),
             ),
             Positioned(
